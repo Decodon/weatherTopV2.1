@@ -1,0 +1,68 @@
+<div class=" ui five doublin inverted cards">
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3> {{station.name}}<i class=" right floated large map marked alternate icon"></i></h3>
+        </div>
+        <span class="ui white text">
+        <h4>Lat: {{station.lat}}</h4>
+        <h4>Lng: {{station.lng}}</h4>
+        </span>
+    </a>
+
+    <a class=" ui red card">
+        <div class="ui inverted black segment">
+            <h3 class="header">Weather <i class="right floated large purple ${_station.weatherIcon}"></i></h3>
+        </div>
+        <span class="ui white text">
+        <h4>Weather Code {{lastReadingCode}}</h4>
+        </span>
+    </a>
+
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Temp
+                <i class="right floated large white {{temperatureTrends}}"></i>
+               <i class="right floated large {{trends.temperatureTrends}}"></i>
+                <i class="right floated large temperature high icon"></i>
+            </h3>
+        </div> 
+        <span class="ui white text">
+        <h4> #{{lastReadingTempC}}°C</h4>
+          
+          
+        <h4> {{lastReadingTempF}}°F</h4>
+        <h4>Min: {{minTemperature}}°C</h4>
+        <h4>Max: {{maxTemperature}}°C</h4>
+        </span>
+    </a>
+
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Wind
+                <i class="right floated large {{station.windSpeedTrends}}"></i>
+                <i class="right floated large wind icon"></i>
+            </h3>
+        </div>
+        <span class="ui white text">
+        <h4> latest Beaufort: {{beaufort}}</h4>
+        <h4> latest Direction: {{compassDirection}}</h4>
+        <h4> Feels like: {{windChill}} </h4>
+        <h4> Min: {{minWindSpeed}}</h4>
+        <h4> Max: {{maxWindSpeed}}</h4>
+        </span>
+    </a>
+
+    <a class=" ui red card">
+        <div class="ui inverted segment">
+            <h3 class="header">Pressure
+                <i class="right floated large {{station.pressureTrends}}"></i>
+                <i class="right floated large compress arrows alternate icon"></i>
+            </h3>
+        </div>
+        <span class="ui white text">
+        <h4> latest Pressure:  {{lastReadingPressure}}hPa</h4>
+        <h4> Min: {{minPressure}}hPa</h4>
+        <h4> Max: {{maxPressure}}hPa</h4>
+        </span>
+    </a>
+</div>

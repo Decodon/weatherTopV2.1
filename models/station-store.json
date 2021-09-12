@@ -1,0 +1,155 @@
+{
+  "stationCollection": [
+    {
+      "id": "09d61630-08de-11ec-9652-275e6953af31",
+      "name": "Clon",
+      "lat": "25.12",
+      "lng": "2",
+      "readings": [
+        {
+          "date": "",
+          "id": "0e57cdc0-08de-11ec-9652-275e6953af31",
+          "code": "100",
+          "temperature": "200",
+          "windSpeed": "2020",
+          "pressure": "20",
+          "windDirection": "20"
+        }
+      ]
+    },
+    {
+      "id": "789e3550-08e5-11ec-96ec-2b282a105acb",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Clon",
+      "lat": "25.12",
+      "lng": "2",
+      "readings": [
+        {
+          "date": "",
+          "id": "d8582b80-08e6-11ec-9f2f-3d2229dff616",
+          "code": "200",
+          "temperature": "25",
+          "windSpeed": "31",
+          "pressure": "21",
+          "windDirection": "1"
+        },
+        {
+          "date": "",
+          "id": "0ba8c440-08e7-11ec-9f2f-3d2229dff616",
+          "code": "100",
+          "temperature": "25",
+          "windSpeed": "25",
+          "pressure": "252",
+          "windDirection": "25"
+        },
+        {
+          "date": "",
+          "id": "113b7f90-0e2a-11ec-9a3a-3ff649f6c642",
+          "code": "200",
+          "temperature": "1",
+          "windSpeed": "2",
+          "pressure": "15",
+          "windDirection": "125"
+        },
+        {
+          "date": "",
+          "id": "6245b4f0-0e2f-11ec-ba91-2f9a4fe0ba0a",
+          "code": "200",
+          "temperature": "54",
+          "windSpeed": 1,
+          "pressure": "20",
+          "windDirection": "21"
+        },
+        {
+          "id": "6985b770-10c7-11ec-bc04-11d49901fdfa",
+          "code": "300",
+          "temperature": "45",
+          "windSpeed": 1,
+          "pressure": "2158",
+          "windDirection": "45"
+        },
+        {
+          "date": "",
+          "id": "5182a4b0-10c9-11ec-8b47-f7b858a88b65",
+          "code": "500",
+          "temperature": "25",
+          "windSpeed": "100",
+          "pressure": "1004",
+          "windDirection": "25"
+        },
+        {
+          "id": "2e1637a0-10d1-11ec-8be7-cd66d95a6425",
+          "code": "400",
+          "temperature": "74",
+          "windSpeed": "24",
+          "pressure": "1003",
+          "windDirection": "290"
+        },
+        {
+          "date": "",
+          "id": "b40be250-10dc-11ec-abb7-955d3ced4990",
+          "code": "300",
+          "temperature": "25",
+          "windSpeed": "456",
+          "pressure": "456",
+          "windDirection": "465"
+        },
+        {
+          "date": "",
+          "id": "653f8530-116a-11ec-beda-6331f3e3d858",
+          "code": "200",
+          "temperature": "12",
+          "windSpeed": "125",
+          "pressure": "123",
+          "windDirection": "561"
+        },
+        {
+          "date": "Sun Sep 12 2021 11:28:27 GMT+0000 (Coordinated Universal Time)",
+          "id": "8c97c9e0-13bc-11ec-a916-2170c292285e",
+          "code": "300",
+          "temperature": "45",
+          "windSpeed": "45",
+          "pressure": "45",
+          "windDirection": "45"
+        }
+      ],
+      "code": "300",
+      "maxTemperature": "55"
+    },
+    {
+      "id": "90087890-08e5-11ec-96ec-2b282a105acb",
+      "userid": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "name": "Kinsale",
+      "readings": [
+        {
+          "date": "",
+          "id": "972ec340-08e5-11ec-96ec-2b282a105acb",
+          "code": "200",
+          "temperature": "24",
+          "windSpeed": "3",
+          "pressure": "1005",
+          "windDirection": "300"
+        },
+        {
+          "date": "",
+          "id": "c7dc49e0-10c4-11ec-9010-0545fd897232",
+          "code": "300",
+          "temperature": "45",
+          "windSpeed": "45",
+          "pressure": "45",
+          "windDirection": "45"
+        }
+      ],
+      "code": "200",
+      "maxTemperature": "24"
+    },
+    {
+      "id": "eb0c08b0-1254-11ec-ab13-1babf1fb57bc",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "inchydoney",
+      "lat": "123",
+      "lng": "4512",
+      "readings": []
+    }
+  ]
+}
