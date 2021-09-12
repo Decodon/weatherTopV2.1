@@ -2,32 +2,34 @@
 
 const logger = require("../utils/logger");
 const stationStore = require("../models/station-store");
-const uuid = require('uuid');
-const accounts = require ('./accounts.js');
+const uuid = require("uuid");
+const accounts = require("./accounts.js");
 const stationAnalytics = require("../utils/analytics");
 const maxmin = require("../utils/maxmin");
-const trends= require("../utils/trends");
+const trends = require("../utils/trends");
 
 const dashboard = {
-  
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
-    
-    
     const stations = stationStore.getUserStations(loggedInUser.id);
-    stations.sort((a, b) => a.name.localeCompare(b.name));
-    //https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
-    //const allStations = stationStore.getAllStations();
+    const allStations = stationStore.getAllStations();
     
- //   for (let index = 0; index < allStations.length; index++) {
+    for (let index = 0; index < allStations.length; index++) {
+      const station = allStations[index];
+      stations.maxTemperature = maxmin.getMaxTemperature(station);
+    }
+    /*for (let station in stations) {
+    stations.latestTempC = stationAnalytics.getLastReading(station).temperature;}
     
-      //station.latestCode = stationAnalytics.getLastReading(station).temperature;
+   
+     
+    station.latestCode = stationAnalytics.getLastReading(station).temperature;
 
-    //const lastReadingCode = stationAnalytics.getLastReading(station).code;
-    //console.log("LatestCode", lastReadingCode);
-    //}
-    /*
+    const lastReadingCode = stationAnalytics.getLastReading(station).code;
+    console.log("LatestCode", lastReadingCode);
+    }
+   
     const lastReadingTempC = stationAnalytics.getLastReading(station).temperature;
     console.log("LatestTempC", lastReadingTempC);
     const lastReadingTempF = (lastReadingTempC*(9/5))+32;
@@ -42,15 +44,14 @@ const dashboard = {
     console.log("LatestWindChill", windChill);
     */
 
-    
     const viewData = {
       title: "Station Dashboard",
-      stations: stationStore.getUserStations(loggedInUser.id),
+      stations: stationStore.getUserStations(loggedInUser.id)
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
   },
-  
+
   addStation(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const newStation = {
@@ -59,20 +60,19 @@ const dashboard = {
       name: request.body.name,
       lat: request.body.lat,
       lng: request.body.lng,
-      readings:[]
+      readings: []
     };
-    logger.debug('Creating a new Station', newStation);
+    logger.debug("Creating a new Station", newStation);
     stationStore.addStation(newStation);
-    response.redirect('/dashboard');
+    response.redirect("/dashboard");
   },
-  
+
   deleteStation(request, response) {
     const stationId = request.params.id;
     logger.debug(`Deleting Station ${stationId}`);
     stationStore.removeStation(stationId);
-    response.redirect('/dashboard');
+    response.redirect("/dashboard");
   }
-  
 };
 
 module.exports = dashboard;

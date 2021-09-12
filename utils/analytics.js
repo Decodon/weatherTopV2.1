@@ -204,7 +204,7 @@ const stationAnalytics = {
       ) {
         compassDirection = "NNW";
       } else if (lastReading.windDirection > 360.0) {
-        compassDirection = "Deleter and enter degrees 0-360 please";
+        compassDirection = "Delete and enter degrees 0-360 please";
       }
       return compassDirection;
     }

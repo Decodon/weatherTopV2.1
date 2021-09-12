@@ -11,8 +11,10 @@ const stationStore = {
   collection: 'stationCollection',
   
   getUserStations(userid) {
-    return this.store.findBy(this.collection, { userid: userid });
-  },
+  let stations = this.store.findBy(this.collection, { userid: userid })
+  const orderedStations = _.sortBy(stations, o => o.name)
+  return orderedStations;
+},
 
   getAllStations() {
     return this.store.findAll(this.collection);

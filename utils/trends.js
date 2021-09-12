@@ -11,13 +11,13 @@ const trends = {
       secondLastReading = station.readings[station.readings.length - 2];
       thirdLastReading = station.readings[station.readings.length - 3];
       if (
-        lastReading.temperature > secondLastReading.temperature &&
-        secondLastReading.temperature > thirdLastReading.temperature
+        parseInt(lastReading.temperature) > parseInt(secondLastReading.temperature) &&
+        parseInt(secondLastReading.temperature) > parseInt(thirdLastReading.temperature)
       ) {
         temperatureTrends = "arrow up icon";
       } else if (
-        lastReading.temperature < secondLastReading.temperature &&
-        secondLastReading.temperature < thirdLastReading.temperature
+        parseInt(lastReading.temperature) < parseInt(secondLastReading.temperature) &&
+        parseInt(secondLastReading.temperature) < parseInt(thirdLastReading.temperature)
       ) {
         temperatureTrends = "arrow down icon";
       } else {
@@ -39,13 +39,13 @@ const trends = {
       secondLastReading = station.readings[station.readings.length - 2];
       thirdLastReading = station.readings[station.readings.length - 3];
       if (
-        lastReading.windSpeed > secondLastReading.windSpeed &&
-        secondLastReading.windSpeed > thirdLastReading.windSpeed
+        parseInt(lastReading.windSpeed) > parseInt(secondLastReading.windSpeed) &&
+        parseInt(secondLastReading.windSpeed) > parseInt(thirdLastReading.windSpeed)
       ) {
         windSpeedTrends = "arrow up icon";
       } else if (
-        lastReading.windSpeed < secondLastReading.temperature &&
-        secondLastReading.windSpeed < thirdLastReading.windSpeed
+        parseInt(lastReading.windSpeed) < parseInt(secondLastReading.temperature) &&
+        parseInt(secondLastReading.windSpeed) < parseInt(thirdLastReading.windSpeed)
       ) {
         windSpeedTrends = "arrow down icon";
       } else {
@@ -67,13 +67,13 @@ const trends = {
       secondLastReading = station.readings[station.readings.length - 2];
       thirdLastReading = station.readings[station.readings.length - 3];
       if (
-        lastReading.pressure > secondLastReading.pressure &&
-        secondLastReading.pressure > thirdLastReading.pressure
+        parseInt(lastReading.pressure) > parseInt(secondLastReading.pressure) &&
+       parseInt(secondLastReading.pressure) > parseInt(thirdLastReading.pressure)
       ) {
         pressureTrends  = "arrow up icon";
       } else if (
-        lastReading.pressure < secondLastReading.pressure &&
-        secondLastReading.pressure < thirdLastReading.pressure
+        parseInt(lastReading.pressure) < parseInt(secondLastReading.pressure) &&
+        parseInt(secondLastReading.pressure) < parseInt(thirdLastReading.pressure)
       ) {
         pressureTrends = "arrow down icon";
       } else {
