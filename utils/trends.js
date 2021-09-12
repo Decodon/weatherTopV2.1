@@ -6,8 +6,8 @@ const trends = {
     let secondLastReading = null;
     let thirdLastReading = null;
     let temperatureTrends = null;
-    if (station.readings.length > 0) {
-      lastReading = station.readings[station.readings.length - 1];
+    if (station.readings.length > 2) {
+      lastReading = station.readings[station.readings.length-1];
       secondLastReading = station.readings[station.readings.length - 2];
       thirdLastReading = station.readings[station.readings.length - 3];
       if (
@@ -27,23 +27,25 @@ const trends = {
       temperatureTrends = "calender minus icon";
     }
     return temperatureTrends;
-  }
+  },
 
-  /* getWindSpeedTrends(station) {
+  getWindSpeedTrends(station) {
+    let lastReading = null;
+    let secondLastReading = null;
+    let thirdLastReading = null;
     let windSpeedTrends = null;
-    if (station.readings.length > 0) {
+    if (station.readings.length > 2) {
+      lastReading = station.readings[station.readings.length - 1];
+      secondLastReading = station.readings[station.readings.length - 2];
+      thirdLastReading = station.readings[station.readings.length - 3];
       if (
-        station.readings[length - 1].windSpeed >
-          station.readings[length - 2].windSpeed &&
-        station.readings[length - 2].windSpeed >
-          station.readings[length - 3].windSpeed
+        lastReading.windSpeed > secondLastReading.windSpeed &&
+        secondLastReading.windSpeed > thirdLastReading.windSpeed
       ) {
         windSpeedTrends = "arrow up icon";
       } else if (
-        station.readings[length - 1].windSpeed <
-          station.readings[length - 2].windSpeed &&
-        station.readings[length - 2].windSpeed <
-          station.readings[length - 3].windSpeed
+        lastReading.windSpeed < secondLastReading.temperature &&
+        secondLastReading.windSpeed < thirdLastReading.windSpeed
       ) {
         windSpeedTrends = "arrow down icon";
       } else {
@@ -56,20 +58,22 @@ const trends = {
   },
 
   getPressureTrends(station) {
+    let lastReading = null;
+    let secondLastReading = null;
+    let thirdLastReading = null;
     let pressureTrends = null;
-    if (station.readings.length > 0) {
+    if (station.readings.length > 2) {
+      lastReading = station.readings[station.readings.length - 1];
+      secondLastReading = station.readings[station.readings.length - 2];
+      thirdLastReading = station.readings[station.readings.length - 3];
       if (
-        station.readings[length - 1].pressure >
-          station.readings[length - 2].pressure &&
-        station.readings[length - 2].pressure >
-          station.readings[length - 3].pressure
+        lastReading.pressure > secondLastReading.pressure &&
+        secondLastReading.pressure > thirdLastReading.pressure
       ) {
-        pressureTrends = "arrow up icon";
+        pressureTrends  = "arrow up icon";
       } else if (
-        station.readings[length - 1].pressure <
-          station.readings[length - 2].pressure &&
-        station.readings[length - 2].pressure <
-          station.readings[length - 3].pressure
+        lastReading.pressure < secondLastReading.pressure &&
+        secondLastReading.pressure < thirdLastReading.pressure
       ) {
         pressureTrends = "arrow down icon";
       } else {
@@ -79,8 +83,7 @@ const trends = {
       pressureTrends = "calender minus icon";
     }
     return pressureTrends;
-  }
-*/
+  },
 };
 
 module.exports = trends;

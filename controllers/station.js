@@ -15,61 +15,79 @@ const station = {
     const station = stationStore.getStation(stationId);
 
     
-    const lastReadingCode = parseInt(stationAnalytics.getLastReading(station).code);
-    console.log("LatestCode", lastReadingCode);
-    const lastReadingTempC = stationAnalytics.getLastReading(station)
-      .temperature;
-    console.log("LatestTempC", lastReadingTempC);
-    const lastReadingTempF = lastReadingTempC * (9 / 5) + 32;
-    console.log("LatestTempF", lastReadingTempF);
-    const beaufort = stationAnalytics.getBeaufortScale(station);
-    console.log("LatestBeaufoty", beaufort);
-    const lastReadingPressure = stationAnalytics.getLastReading(station)
-      .pressure;
-    console.log("LatestPressure", lastReadingPressure);
-    const compassDirection = stationAnalytics.getCompassDirection(station);
-    console.log("LatestCompassDirection", compassDirection);
-    const windChill = stationAnalytics.getWindChill(station);
-    console.log("LatestWindChill", windChill);
+    if (station.readings.length > 0) {
+      const lastReadingCode = parseInt(
+        stationAnalytics.getLastReading(station).code
+      );
+      console.log("LatestCode", lastReadingCode);
+      const lastReadingTempC = stationAnalytics.getLastReading(station)
+        .temperature;
+      console.log("LatestTempC", lastReadingTempC);
+      const lastReadingTempF = (
+        Math.round((lastReadingTempC * (9 / 5) + 32) * 100) / 100
+      ).toFixed(2);
+      console.log("LatestTempF", lastReadingTempF);
+      const beaufort = stationAnalytics.getBeaufortScale(station);
+      console.log("LatestBeaufoty", beaufort);
+      const lastReadingPressure = stationAnalytics.getLastReading(station)
+        .pressure;
+      console.log("LatestPressure", lastReadingPressure);
+      const compassDirection = stationAnalytics.getCompassDirection(station);
+      console.log("LatestCompassDirection", compassDirection);
+      const windChill = stationAnalytics.getWindChill(station);
+      console.log("LatestWindChill", windChill);
 
-    const weatherCode = stationAnalytics.weatherCode(lastReadingCode);
-    const weatherIcon = stationAnalytics.weatherIcon(lastReadingCode);
-     console.log("LatestWeather", weatherCode, weatherIcon);
+      const weatherCode = stationAnalytics.weatherCode(lastReadingCode);
+      const weatherIcon = stationAnalytics.weatherIcon(lastReadingCode);
+      console.log("LatestWeather", weatherCode, weatherIcon);
 
-    const maxTemperature = maxmin.getMaxTemperature(station);
-    const minTemperature = maxmin.getMinTemperature(station);
-    const maxWindSpeed = maxmin.getMaxWindSpeed(station);
-    const minWindSpeed = maxmin.getMinWindSpeed(station);
-    const maxPressure = maxmin.getMaxPressure(station);
-    const minPressure = maxmin.getMinPressure(station);
-    console.log("maxwindSpeed", maxWindSpeed);
-    
+      const maxTemperature = maxmin.getMaxTemperature(station);
+      const minTemperature = maxmin.getMinTemperature(station);
+      const maxWindSpeed = maxmin.getMaxWindSpeed(station);
+      const minWindSpeed = maxmin.getMinWindSpeed(station);
+      const maxPressure = maxmin.getMaxPressure(station);
+      const minPressure = maxmin.getMinPressure(station);
+      console.log("maxwindSpeed", maxWindSpeed);
 
-    const temperatureTrends = trends.getTemperatureTrends(station);
-    console.log("temperatureTrends", temperatureTrends);
+      const temperatureTrends = trends.getTemperatureTrends(station);
+      const windSpeedTrends = trends.getWindSpeedTrends(station);
+      const pressureTrends = trends.getPressureTrends(station);
+      console.log("Trends", temperatureTrends, windSpeedTrends, pressureTrends);
 
-    const viewData = {
-      title: "Station",
-      station: stationStore.getStation(stationId),
+      const viewData = {
+        title: "Station",
+        station: stationStore.getStation(stationId),
 
-      lastReadingCode: lastReadingCode,
-      lastReadingTempC: lastReadingTempC,
-      lastReadingTempF: lastReadingTempF,
-      lastReadingPressure: lastReadingPressure,
-      beaufort: beaufort,
-      compassDirection: compassDirection,
-      windChill: windChill,
+        lastReadingCode: lastReadingCode,
+        lastReadingTempC: lastReadingTempC,
+        lastReadingTempF: lastReadingTempF,
+        lastReadingPressure: lastReadingPressure,
+        beaufort: beaufort,
+        compassDirection: compassDirection,
+        windChill: windChill,
 
-      maxTemperature: maxTemperature,
-      minTemperature: minTemperature,
-      maxWindSpeed: maxWindSpeed,
-      minWindSpeed: minWindSpeed,
-      maxPressure: maxPressure,
-      minPressure: minPressure,
+        maxTemperature: maxTemperature,
+        minTemperature: minTemperature,
+        maxWindSpeed: maxWindSpeed,
+        minWindSpeed: minWindSpeed,
+        maxPressure: maxPressure,
+        minPressure: minPressure,
 
-      temperatureTrends: temperatureTrends
-    };
-    response.render("station", viewData);
+        weatherCode: weatherCode,
+        weatherIcon: weatherIcon,
+
+        temperatureTrends: temperatureTrends,
+        windSpeedTrends: windSpeedTrends,
+        pressureTrends: pressureTrends
+      };
+      response.render("station", viewData);
+    } else {
+      const viewData = {
+        title: "Station",
+        station: stationStore.getStation(stationId)
+      };
+      response.render("station", viewData);
+    }
   },
 
   addReading(request, response) {
