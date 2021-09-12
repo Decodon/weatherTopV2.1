@@ -20,6 +20,27 @@
       "email": "john@john.com",
       "password": "john",
       "id": "2095f4e0-13f0-11ec-95e7-d9cb61f30d91"
+    },
+    {
+      "firstName": "Dec",
+      "lastName": "Don",
+      "email": "dec@asd.com",
+      "password": "secret",
+      "id": "d367f830-13fe-11ec-9c40-a78069cdbc86"
+    },
+    {
+      "firstName": "bob",
+      "lastName": "bob",
+      "email": "bob@bob.com",
+      "password": "bob",
+      "id": "af1d8b60-13ff-11ec-9c40-a78069cdbc86"
+    },
+    {
+      "firstName": "Al",
+      "lastName": "Al",
+      "email": "al@al.com",
+      "password": "al",
+      "id": "93071dd0-1402-11ec-8254-4d8f10cb4eb6"
     }
   ]
 }
