@@ -15,7 +15,9 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     
     
-    const station = stationStore.getUserStations(loggedInUser.id);
+    const stations = stationStore.getUserStations(loggedInUser.id);
+    stations.sort((a, b) => a.name.localeCompare(b.name));
+    //https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
     //const allStations = stationStore.getAllStations();
     
  //   for (let index = 0; index < allStations.length; index++) {

@@ -25,59 +25,6 @@
       "lng": "2",
       "readings": [
         {
-          "date": "",
-          "id": "d8582b80-08e6-11ec-9f2f-3d2229dff616",
-          "code": "200",
-          "temperature": "25",
-          "windSpeed": "31",
-          "pressure": "21",
-          "windDirection": "1"
-        },
-        {
-          "date": "",
-          "id": "0ba8c440-08e7-11ec-9f2f-3d2229dff616",
-          "code": "100",
-          "temperature": "25",
-          "windSpeed": "25",
-          "pressure": "252",
-          "windDirection": "25"
-        },
-        {
-          "date": "",
-          "id": "113b7f90-0e2a-11ec-9a3a-3ff649f6c642",
-          "code": "200",
-          "temperature": "1",
-          "windSpeed": "2",
-          "pressure": "15",
-          "windDirection": "125"
-        },
-        {
-          "date": "",
-          "id": "6245b4f0-0e2f-11ec-ba91-2f9a4fe0ba0a",
-          "code": "200",
-          "temperature": "54",
-          "windSpeed": 1,
-          "pressure": "20",
-          "windDirection": "21"
-        },
-        {
-          "id": "6985b770-10c7-11ec-bc04-11d49901fdfa",
-          "code": "300",
-          "temperature": "45",
-          "windSpeed": 1,
-          "pressure": "2158",
-          "windDirection": "45"
-        },
-        {
-          "date": "",
-          "id": "5182a4b0-10c9-11ec-8b47-f7b858a88b65",
-          "code": "500",
-          "temperature": "25",
-          "windSpeed": "100",
-          "pressure": "1004",
-          "windDirection": "25"
-        },
-        {
           "id": "2e1637a0-10d1-11ec-8be7-cd66d95a6425",
           "code": "400",
           "temperature": "74",
@@ -86,31 +33,13 @@
           "windDirection": "290"
         },
         {
-          "date": "",
-          "id": "b40be250-10dc-11ec-abb7-955d3ced4990",
-          "code": "300",
-          "temperature": "25",
-          "windSpeed": "456",
-          "pressure": "456",
-          "windDirection": "465"
-        },
-        {
-          "date": "",
-          "id": "653f8530-116a-11ec-beda-6331f3e3d858",
+          "date": "Sun Sep 12 2021 17:23:10 GMT+0000 (Coordinated Universal Time)",
+          "id": "1a662a10-13ee-11ec-a47c-b113201ce251",
           "code": "200",
-          "temperature": "12",
-          "windSpeed": "125",
-          "pressure": "123",
-          "windDirection": "561"
-        },
-        {
-          "date": "Sun Sep 12 2021 11:28:27 GMT+0000 (Coordinated Universal Time)",
-          "id": "8c97c9e0-13bc-11ec-a916-2170c292285e",
-          "code": "300",
-          "temperature": "45",
-          "windSpeed": "45",
-          "pressure": "45",
-          "windDirection": "45"
+          "temperature": "73",
+          "windSpeed": "23",
+          "pressure": "1002",
+          "windDirection": "260"
         }
       ],
       "code": "300",
@@ -149,6 +78,32 @@
       "name": "inchydoney",
       "lat": "123",
       "lng": "4512",
+      "readings": []
+    },
+    {
+      "id": "54756020-13f0-11ec-b8fc-b913c29eb44b",
+      "userid": "2095f4e0-13f0-11ec-95e7-d9cb61f30d91",
+      "name": "abc",
+      "lat": "12",
+      "lng": "24",
+      "readings": [
+        {
+          "date": "Sun Sep 12 2021 17:41:08 GMT+0000 (Coordinated Universal Time)",
+          "id": "9cd24ef0-13f0-11ec-9a60-89eb2b28ed7b",
+          "code": "200",
+          "temperature": "25",
+          "windSpeed": "21",
+          "pressure": "324",
+          "windDirection": "564"
+        }
+      ]
+    },
+    {
+      "id": "4ade51a0-13f2-11ec-b16f-21e01e5cd7fd",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "abc",
+      "lat": "25",
+      "lng": "13",
       "readings": []
     }
   ]

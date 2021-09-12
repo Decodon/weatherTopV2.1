@@ -4,113 +4,12 @@ const stationAnalytics = {
   getLastReading(station) {
     let lastReading = null;
     let latestConditionTemperatureC = null;
-    //let latestConditionTemperatureF = null;
-
     if (station.readings.length > 0) {
       lastReading = station.readings[station.readings.length - 1];
     }
     return lastReading;
   },
-  /* getLastReading(station) {
-    let lastReading = null;
-    let latestConditionTemperatureC = null;
-    //let latestConditionTemperatureF = null;
-    
-    if (station.readings.length > 0) {
-      lastReading = station.readings[station.readings.length - 1];
-    }
-    station.code = lastReading.code;
-    return latestConditionTemperatureC = lastReading.temperature;
-    //latestConditionTemperatureF = (lastReading.temperature * (9/5))+32;
-  },
-  */
-
-  /*
-  getLatestConditionTemperatureC(station) {
-    let lastReading = 0;
-    let latestConditionTemperatureC = 0;
-    if (station.readings.length > 0) {
-      lastReading = station.readings[station.readings.length-1];
-      latestConditionTemperatureC = lastReading.temperature;
-    }
-    return latestConditionTemperatureC;
-  }
-  
-
-  getlastReading(station) {
-    let lastReading = [];
-    if (station.reading.length > 0) {
-      lastReading = station.readings[station.readings.length - 1];
-    }
-    return lastReading;
-  },
-
-  getLatestConditionTemperatureC(station) {
-    let latestConditionTemperatureC = null;
-    if (station.reading.length > 0) {
-      latestConditionTemperatureC =
-        station.readings[station.readings.length - 1].temperature;
-    } else {
-      latestConditionTemperatureC = 0.0;
-    }
-    return latestConditionTemperatureC;
-  },
-
-  getLatestConditionTemperatureF(station) {
-    let latestConditionTemperatureF = null;
-    if (station.reading.length > 0) {
-      latestConditionTemperatureF =
-        station.readings[station.readings.length - 1].temperature * (9 / 5) +
-        32;
-    } else {
-      latestConditionTemperatureF = 0.0;
-    }
-    return latestConditionTemperatureF;
-  },
-
-  getLatestConditionCode(station) {
-    let latestConditionCode = null;
-    if (station.reading.length > 0) {
-      latestConditionCode = station.readings[station.readings.length - 1].code;
-    } else {
-      latestConditionCode = 0.0;
-    }
-    return latestConditionCode;
-  },
-
-  getLatestConditionWindSpeed(station) {
-    let latestConditionWindSpeed = null;
-    if (station.reading.length > 0) {
-      latestConditionWindSpeed =
-        station.readings[station.readings.length - 1].windSpeed;
-    } else {
-      latestConditionWindSpeed = 0.0;
-    }
-    return latestConditionWindSpeed;
-  },
-
-  getLatestConditionPressure(station) {
-    let latestConditionPressure = null;
-    if (station.reading.length > 0) {
-      latestConditionPressure =
-        station.readings[station.readings.length - 1].pressure;
-    } else {
-      latestConditionPressure = 0.0;
-    }
-    return latestConditionPressure;
-  },
-
-  getLatestConditionWindDirection(station) {
-    let latestConditionWindDirection = null;
-    if (station.reading.length > 0) {
-      latestConditionWindDirection =
-        station.readings[station.readings.length - 1].windDirection;
-    } else {
-      latestConditionWindDirection = 0.0;
-    }
-    return latestConditionWindDirection;
-  },
-*/
+ 
   getWindChill(station) {
     let lastReading = null;
     let windChill = null;

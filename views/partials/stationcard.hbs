@@ -11,10 +11,10 @@
 
     <a class=" ui red card">
         <div class="ui inverted black segment">
-            <h3 class="header">Weather <i class="right floated large purple ${_station.weatherIcon}"></i></h3>
+            <h3 class="header">Weather <i class="right floated large white {{weatherIcon}}"></i></h3>
         </div>
         <span class="ui white text">
-        <h4>Weather Code {{lastReadingCode}}</h4>
+        <h4>Latest Weather is : {{weatherCode}}</h4>
         </span>
     </a>
 
@@ -22,14 +22,11 @@
         <div class="ui inverted segment">
             <h3 class="header">Temp
                 <i class="right floated large white {{temperatureTrends}}"></i>
-               <i class="right floated large {{trends.temperatureTrends}}"></i>
                 <i class="right floated large temperature high icon"></i>
             </h3>
         </div> 
         <span class="ui white text">
         <h4> #{{lastReadingTempC}}°C</h4>
-          
-          
         <h4> {{lastReadingTempF}}°F</h4>
         <h4>Min: {{minTemperature}}°C</h4>
         <h4>Max: {{maxTemperature}}°C</h4>
@@ -39,7 +36,7 @@
     <a class=" ui red card">
         <div class="ui inverted segment">
             <h3 class="header">Wind
-                <i class="right floated large {{station.windSpeedTrends}}"></i>
+                <i class="right floated large {{windSpeedTrends}}"></i>
                 <i class="right floated large wind icon"></i>
             </h3>
         </div>
@@ -55,7 +52,7 @@
     <a class=" ui red card">
         <div class="ui inverted segment">
             <h3 class="header">Pressure
-                <i class="right floated large {{station.pressureTrends}}"></i>
+                <i class="right floated large white {{pressureTrends}}"></i>
                 <i class="right floated large compress arrows alternate icon"></i>
             </h3>
         </div>
